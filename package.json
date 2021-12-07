@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "esbuild": "^0.14.2"
+  },
+  "scripts": {
+    "watch": "esbuild main.js --bundle --outfile=/Users/$USER/.phoenix.js --platform=node --watch"
+  },
+  "dependencies": {
+    "@calcit/procs": "^0.5.13"
+  }
+}
