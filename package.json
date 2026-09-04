@@ -11,6 +11,6 @@
   "scripts": {
     "build": "calcit calcit.cirru js && esbuild main.js --bundle --outfile=dist/phoenix.js --platform=node --minify",
     "test": "yarn build && node tests/phoenix-smoke.mjs",
-    "watch": "calcit calcit.cirru js && esbuild main.js --bundle --outfile=/Users/$USER/.phoenix.js --platform=node --watch"
+    "watch": "calcit calcit.cirru js && esbuild main.js --bundle --outfile=\"$HOME/.phoenix.js\" --platform=node --watch"
   }
 }
