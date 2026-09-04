@@ -1,11 +1,16 @@
 {
+  "name": "phoenix-script",
+  "version": "0.0.1",
+  "packageManager": "yarn@4.12.0",
+  "dependencies": {
+    "@calcit/procs": "0.13.77"
+  },
   "devDependencies": {
-    "esbuild": "^0.14.2"
+    "esbuild": "0.28.2"
   },
   "scripts": {
-    "watch": "esbuild main.js --bundle --outfile=/Users/$USER/.phoenix.js --platform=node --watch"
-  },
-  "dependencies": {
-    "@calcit/procs": "^0.5.13"
+    "build": "calcit calcit.cirru js && esbuild main.js --bundle --outfile=dist/phoenix.js --platform=node --minify",
+    "test": "yarn build && node tests/phoenix-smoke.mjs",
+    "watch": "calcit calcit.cirru js && esbuild main.js --bundle --outfile=/Users/$USER/.phoenix.js --platform=node --watch"
   }
 }

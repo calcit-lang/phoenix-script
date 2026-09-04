@@ -1,171 +1,134 @@
 
-{}
-  :users $ {}
-    |u0 $ {} (:name |chen) (:id |u0) (:nickname |chen) (:avatar nil) (:password |d41d8cd98f00b204e9800998ecf8427e) (:theme :star-trail)
-  :ir $ {} (:package |app)
-    :files $ {}
-      |app.main $ {}
-        :ns $ {} (:type :expr) (:by |u0) (:at 1638892329605)
-          :data $ {}
-            |T $ {} (:type :leaf) (:by |u0) (:at 1638892329605) (:text |ns)
-            |j $ {} (:type :leaf) (:by |u0) (:at 1638892329605) (:text |app.main)
-        :defs $ {}
-          |main! $ {} (:type :expr) (:by |u0) (:at 1638892332603)
-            :data $ {}
-              |T $ {} (:type :leaf) (:by |u0) (:at 1638892332603) (:text |defn)
-              |j $ {} (:type :leaf) (:by |u0) (:at 1638892344638) (:text |main!)
-              |r $ {} (:type :expr) (:by |u0) (:at 1638892332603)
-                :data $ {}
-              |v $ {} (:type :expr) (:by |u0) (:at 1638892406936)
-                :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1638892407317) (:text |bind-events!)
-          |reload! $ {} (:type :expr) (:by |u0) (:at 1638892354733)
-            :data $ {}
-              |T $ {} (:type :leaf) (:by |u0) (:at 1638892354733) (:text |defn)
-              |j $ {} (:type :leaf) (:by |u0) (:at 1638892354733) (:text |reload!)
-              |r $ {} (:type :expr) (:by |u0) (:at 1638892354733)
-                :data $ {}
-              |v $ {} (:type :expr) (:by |u0) (:at 1638892384964)
-                :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1638892403011) (:text |bind-events!)
-          |bind-events! $ {} (:type :expr) (:by |u0) (:at 1638892837068)
-            :data $ {}
-              |T $ {} (:type :leaf) (:by |u0) (:at 1638892840519) (:text |defn)
-              |j $ {} (:type :leaf) (:by |u0) (:at 1638892837068) (:text |bind-events!)
-              |r $ {} (:type :expr) (:by |u0) (:at 1638892837068)
-                :data $ {}
-              |v $ {} (:type :expr) (:by |u0) (:at 1638892841730)
-                :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1638892845263) (:text |log!)
-                  |j $ {} (:type :leaf) (:by |u0) (:at 1638893325582) (:text "|\"demo4")
-              |x $ {} (:type :expr) (:by |u0) (:at 1638893338711)
-                :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1638893342539) (:text |.!on)
-                  |j $ {} (:type :leaf) (:by |u0) (:at 1638893345341) (:text |js/Key)
-                  |r $ {} (:type :expr) (:by |u0) (:at 1638893352711)
-                    :data $ {}
-                      |T $ {} (:type :leaf) (:by |u0) (:at 1638893354790) (:text |js-array)
-                      |j $ {} (:type :leaf) (:by |u0) (:at 1638894495912) (:text "|\"option")
-                  |n $ {} (:type :leaf) (:by |u0) (:at 1638893362066) (:text "|\"tab")
-                  |v $ {} (:type :expr) (:by |u0) (:at 1638893372563)
-                    :data $ {}
-                      |T $ {} (:type :leaf) (:by |u0) (:at 1638893372919) (:text |fn)
-                      |j $ {} (:type :expr) (:by |u0) (:at 1638893373191)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638893443390) (:text |events)
-                          |D $ {} (:type :leaf) (:by |u0) (:at 1638893402466) (:text |&)
-                      |r $ {} (:type :expr) (:by |u0) (:at 1638894070772)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638894078475) (:text |get-recent!)
-              |y $ {} (:type :expr) (:by |u0) (:at 1638893338711)
-                :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1638893342539) (:text |.!on)
-                  |j $ {} (:type :leaf) (:by |u0) (:at 1638893345341) (:text |js/Key)
-                  |r $ {} (:type :expr) (:by |u0) (:at 1638893352711)
-                    :data $ {}
-                      |T $ {} (:type :leaf) (:by |u0) (:at 1638893354790) (:text |js-array)
-                      |j $ {} (:type :leaf) (:by |u0) (:at 1638894495912) (:text "|\"option")
-                      |b $ {} (:type :leaf) (:by |u0) (:at 1638895090048) (:text "|\"control")
-                  |n $ {} (:type :leaf) (:by |u0) (:at 1638895084211) (:text "|\"m")
-                  |v $ {} (:type :expr) (:by |u0) (:at 1638893372563)
-                    :data $ {}
-                      |T $ {} (:type :leaf) (:by |u0) (:at 1638893372919) (:text |fn)
-                      |j $ {} (:type :expr) (:by |u0) (:at 1638893373191)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638893443390) (:text |events)
-                          |D $ {} (:type :leaf) (:by |u0) (:at 1638893402466) (:text |&)
-                      |r $ {} (:type :expr) (:by |u0) (:at 1638894070772)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638895101858) (:text |maximize-current!)
-          |log! $ {} (:type :expr) (:by |u0) (:at 1638892845690)
-            :data $ {}
-              |T $ {} (:type :leaf) (:by |u0) (:at 1638892846936) (:text |defn)
-              |j $ {} (:type :leaf) (:by |u0) (:at 1638892845690) (:text |log!)
-              |r $ {} (:type :expr) (:by |u0) (:at 1638892845690)
-                :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1638892850722) (:text |&)
-                  |r $ {} (:type :leaf) (:by |u0) (:at 1638892851903) (:text |args)
-              |v $ {} (:type :expr) (:by |u0) (:at 1638892853888)
-                :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1638892860884) (:text |js/Phoenix.log)
-                  |j $ {} (:type :leaf) (:by |u0) (:at 1638892862175) (:text |&)
-                  |r $ {} (:type :leaf) (:by |u0) (:at 1638892862886) (:text |args)
-          |get-recent! $ {} (:type :expr) (:by |u0) (:at 1638894078923)
-            :data $ {}
-              |T $ {} (:type :leaf) (:by |u0) (:at 1638894080023) (:text |defn)
-              |j $ {} (:type :leaf) (:by |u0) (:at 1638894078923) (:text |get-recent!)
-              |r $ {} (:type :expr) (:by |u0) (:at 1638894078923)
-                :data $ {}
-              |v $ {} (:type :expr) (:by |u0) (:at 1638894094821)
-                :data $ {}
-                  |T $ {} (:type :expr) (:by |u0) (:at 1638894201439)
-                    :data $ {}
-                      |T $ {} (:type :expr) (:by |u0) (:at 1638894199460)
-                        :data $ {}
-                          |T $ {} (:type :expr) (:by |u0) (:at 1638894142032)
-                            :data $ {}
-                              |T $ {} (:type :leaf) (:by |u0) (:at 1638894165959) (:text |js/Window)
-                              |D $ {} (:type :leaf) (:by |u0) (:at 1638894145004) (:text |.!recent)
-                          |D $ {} (:type :leaf) (:by |u0) (:at 1638894203410) (:text |windows)
-                      |j $ {} (:type :expr) (:by |u0) (:at 1638894218108)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638894219440) (:text |w0)
-                          |j $ {} (:type :expr) (:by |u0) (:at 1638894219780)
-                            :data $ {}
-                              |T $ {} (:type :leaf) (:by |u0) (:at 1638894252863) (:text |.-1)
-                              |j $ {} (:type :leaf) (:by |u0) (:at 1638894228258) (:text |windows)
-                  |D $ {} (:type :leaf) (:by |u0) (:at 1638894198804) (:text |let)
-                  |j $ {} (:type :expr) (:by |u0) (:at 1638894205604)
-                    :data $ {}
-                      |T $ {} (:type :leaf) (:by |u0) (:at 1638894206052) (:text |if)
-                      |j $ {} (:type :expr) (:by |u0) (:at 1638894230507)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638894231938) (:text |some?)
-                          |j $ {} (:type :leaf) (:by |u0) (:at 1638894233518) (:text |w0)
-                      |r $ {} (:type :expr) (:by |u0) (:at 1638894234758)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638894238227) (:text |.!focus)
-                          |j $ {} (:type :leaf) (:by |u0) (:at 1638894239356) (:text |w0)
-          |maximize-current! $ {} (:type :expr) (:by |u0) (:at 1638895102667)
-            :data $ {}
-              |T $ {} (:type :leaf) (:by |u0) (:at 1638895102667) (:text |defn)
-              |j $ {} (:type :leaf) (:by |u0) (:at 1638895102667) (:text |maximize-current!)
-              |r $ {} (:type :expr) (:by |u0) (:at 1638895103556)
-                :data $ {}
-                  |T $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |let)
-                  |j $ {} (:type :expr) (:by |u0) (:at 1638895103556)
-                    :data $ {}
-                      |T $ {} (:type :expr) (:by |u0) (:at 1638895103556)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |windows)
-                          |j $ {} (:type :expr) (:by |u0) (:at 1638895103556)
-                            :data $ {}
-                              |T $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |.!recent)
-                              |j $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |js/Window)
-                      |j $ {} (:type :expr) (:by |u0) (:at 1638895103556)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |w0)
-                          |j $ {} (:type :expr) (:by |u0) (:at 1638895103556)
-                            :data $ {}
-                              |T $ {} (:type :leaf) (:by |u0) (:at 1638895111021) (:text |.-0)
-                              |j $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |windows)
-                  |r $ {} (:type :expr) (:by |u0) (:at 1638895103556)
-                    :data $ {}
-                      |T $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |if)
-                      |j $ {} (:type :expr) (:by |u0) (:at 1638895103556)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |some?)
-                          |j $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |w0)
-                      |r $ {} (:type :expr) (:by |u0) (:at 1638895103556)
-                        :data $ {}
-                          |T $ {} (:type :leaf) (:by |u0) (:at 1638895118075) (:text |.!maximize)
-                          |j $ {} (:type :leaf) (:by |u0) (:at 1638895103556) (:text |w0)
-              |n $ {} (:type :expr) (:by |u0) (:at 1638895145048)
-                :data $ {}
-        :proc $ {} (:type :expr) (:by |u0) (:at 1638892329605)
-          :data $ {}
-        :configs $ {}
-  :configs $ {} (:port 6001) (:init-fn |app.main/main!) (:reload-fn |app.main/reload!)
-    :modules $ []
-    :version |0.0.1
+{} (:about "|Machine-generated snapshot. Do not edit directly — changes will be overwritten. Use `calcit query` to inspect and `calcit edit`/`calcit tree` to modify. Run `calcit docs agents --full` first. Manual edits must follow format and schema conventions, then run `calcit edit format`.") (:package |app)
   :entries $ {}
+    :default $ {} (:description |) (:init-fn 'app.main/main!) (:mode :js) (:reload-fn 'app.main/reload!)
+      :feature-policy $ {}
+      :modules $ [] |js-ffi/
+      :type-slots $ {}
+  :files $ {}
+    'app.main $ %{} 'FileEntry
+      :defs $ {}
+        'KeyHost $ %{} 'CodeEntry (:doc "|Typed capability for Phoenix shortcut registration.")
+          :code $ quote
+            deftrait KeyHost $ .on
+              :: 'Fn $ {}
+                :args $ [] 'app.main/KeyHost 'String 'JsObject
+                  :: 'Fn $ {}
+                    :args $ []
+                    :return 'Unit
+                :return 'Unit
+          :examples $ []
+          :ffi $ {} (:backend :js) (:kind :external-object)
+          :schema $ :: 'Trait
+        'PhoenixHost $ %{} 'CodeEntry (:doc "|Typed capability for the Phoenix logging global.")
+          :code $ quote
+            deftrait PhoenixHost $ .log
+              :: 'Fn $ {}
+                :args $ [] 'app.main/PhoenixHost 'String
+                :return 'Unit
+          :examples $ []
+          :ffi $ {} (:backend :js) (:kind :external-object)
+          :schema $ :: 'Trait
+        'PhoenixWindowHost $ %{} 'CodeEntry (:doc "|Typed capability for Phoenix window focus and maximize effects.")
+          :code $ quote
+            deftrait PhoenixWindowHost
+              .focus $ :: 'Fn
+                {}
+                  :args $ [] 'app.main/PhoenixWindowHost
+                  :return 'Unit
+              .maximize $ :: 'Fn
+                {}
+                  :args $ [] 'app.main/PhoenixWindowHost
+                  :return 'Unit
+          :examples $ []
+          :ffi $ {} (:backend :js) (:kind :external-object)
+          :schema $ :: 'Trait
+        'WindowHost $ %{} 'CodeEntry (:doc "|Typed capability for reading the Phoenix recent-window list.")
+          :code $ quote
+            deftrait WindowHost $ .recent
+              :: 'Fn $ {}
+                :args $ [] 'app.main/WindowHost
+                :return $ :: 'JsNullish 'JsObject
+          :examples $ []
+          :ffi $ {} (:backend :js) (:kind :external-object)
+          :schema $ :: 'Trait
+        'bind-events! $ %{} 'CodeEntry (:doc "|Validate the Phoenix Key API and register supported shortcuts.")
+          :code $ quote
+            defn bind-events! () $ do (log! |demo4)
+              let
+                  raw-key-api $ contract/expect-object |Key js/Key
+                  key-api $ unsafe-coerce raw-key-api 'app.main/KeyHost
+                do
+                  .!on key-api |tab (js-array |option) get-recent!
+                  .!on key-api |m (js-array |control |option) maximize-current!
+                  , &unit
+          :examples $ []
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
+              :features $ #{} :js-ffi
+        'get-recent! $ %{} 'CodeEntry (:doc "|Focus the second recent Phoenix window when present.")
+          :code $ quote
+            defn get-recent! () $ let
+                raw-window-api $ contract/expect-object |Window js/Window
+                window-api $ unsafe-coerce raw-window-api 'app.main/WindowHost
+                windows $ contract/expect-object |Window.recent (.!recent window-api)
+                recent-window $ aget windows 1
+              if (js-present? recent-window)
+                let
+                    raw-focused-window $ contract/expect-object |Window.recent[1] recent-window
+                    focused-window $ unsafe-coerce raw-focused-window 'app.main/PhoenixWindowHost
+                  do (.!focus focused-window) &unit
+                , &unit
+          :examples $ []
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
+              :features $ #{} :js-ffi
+        'log! $ %{} 'CodeEntry (:doc "|Validate Phoenix.log and write one message.")
+          :code $ quote
+            defn log! (message)
+              let
+                  raw-phoenix $ contract/expect-object |Phoenix js/Phoenix
+                  phoenix $ unsafe-coerce raw-phoenix 'app.main/PhoenixHost
+                do (.!log phoenix message) &unit
+          :examples $ []
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ [] 'String
+              :features $ #{} :js-ffi
+        'main! $ %{} 'CodeEntry (:doc "|Start the Phoenix key bindings.")
+          :code $ quote
+            defn main! () $ bind-events!
+          :examples $ []
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
+        'maximize-current! $ %{} 'CodeEntry (:doc "|Maximize the first recent Phoenix window when present.")
+          :code $ quote
+            defn maximize-current! () $ let
+                raw-window-api $ contract/expect-object |Window js/Window
+                window-api $ unsafe-coerce raw-window-api 'app.main/WindowHost
+                windows $ contract/expect-object |Window.recent (.!recent window-api)
+                recent-window $ aget windows 0
+              if (js-present? recent-window)
+                let
+                    raw-current-window $ contract/expect-object |Window.recent[0] recent-window
+                    current-window $ unsafe-coerce raw-current-window 'app.main/PhoenixWindowHost
+                  do (.!maximize current-window) &unit
+                , &unit
+          :examples $ []
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
+              :features $ #{} :js-ffi
+        'reload! $ %{} 'CodeEntry (:doc "|Re-register the Phoenix key bindings after reload.")
+          :code $ quote
+            defn reload! () $ bind-events!
+          :examples $ []
+          :schema $ :: 'Fn
+            {} (:return 'Unit)
+              :args $ []
+      :ns $ %{} 'NsEntry (:doc |)
+        :code $ quote
+          ns app.main $ :require (js-ffi.contract :as contract)

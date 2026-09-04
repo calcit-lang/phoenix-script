@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Enable Yarn
+        run: |
+          corepack enable
+          corepack prepare yarn@4.12.0 --activate
+
+      - uses: calcit-lang/setup-calcit@v1
+
+      - name: Install dependencies
+        run: |
+          caps --ci
+          yarn install --immutable
+          caps verify --toolchain
+
+      - name: Verify Snapshot and host behavior
+        run: |
+          calcit calcit.cirru edit format
+          git diff --exit-code -- calcit.cirru
+          calcit calcit.cirru --check-only
+          calcit calcit.cirru analyze dynamic-methods --max 0
+          calcit calcit.cirru analyze weak-types --only schema-dynamic,unresolved-type-slot,code-dynamic --intent unresolved --summary-only --format json
+          calcit calcit.cirru analyze deprecated --summary-only --format json
+          calcit calcit.cirru analyze quality --baseline config/calcit-quality.cirru
+          calcit calcit.cirru docs format-md README.md --check
+          calcit calcit.cirru docs check-md README.md --failures-only
+          yarn test
