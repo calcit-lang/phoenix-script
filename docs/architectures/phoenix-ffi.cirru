@@ -97,7 +97,7 @@
           .recent $ :: 'Fn
             {}
               :args $ [] 'app.main/WindowHost
-              :return $ :: 'JsNullish 'JsObject
+              :return 'JsObject
     'app.main/PhoenixWindowHost $ {}
       :mode :ensure
       :kind :data

@@ -48,7 +48,7 @@
             deftrait WindowHost $ .recent
               :: 'Fn $ {}
                 :args $ [] 'app.main/WindowHost
-                :return $ :: 'JsNullish 'JsObject
+                :return 'JsObject
           :examples $ []
           :ffi $ {} (:backend :js) (:kind :external-object)
           :schema $ :: 'Trait
