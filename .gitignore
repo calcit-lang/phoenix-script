@@ -1,5 +1,13 @@
 
 js-out/
 node_modules/
+dist/
+.calcit/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 .compact-inc.cirru

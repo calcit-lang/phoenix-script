@@ -1,19 +1,32 @@
+# Phoenix script in Calcit
 
-## Scripts to interact with [Phoenix](https://github.com/kasper/phoenix).
+Scripts for [Phoenix](https://github.com/kasper/phoenix), built with Calcit
+0.13.77 and the JavaScript backend.
 
-> using calcit-js.
+## Setup
 
-### Usages
+Install Phoenix, Calcit 0.13.77, Node.js 24, and Yarn 4. Then install both
+Calcit and JavaScript dependencies:
 
 ```bash
-brew install --cask phoenix
-
-yarn
-cr --emit-js -1 # make sure calcit installed
-esbuild main.js --bundle --outfile=/Users/$USER/.phoenix.js --platform=node --minify
+caps --ci
+yarn install --immutable
 ```
 
-Keys:
+Build and test the bundle:
 
-* `option tab` switch previous window.
-* `control option m` maxize current window.
+```bash
+yarn test
+```
+
+The production bundle is written to `dist/phoenix.js`. Copy it to
+`~/.phoenix.js`, or run `yarn watch` to rebuild that file while editing.
+
+## Shortcuts
+
+- `option tab` focuses the second item in Phoenix's recent-window list.
+- `control option m` maximizes the current window.
+
+The Calcit adapter validates Phoenix host globals before applying the typed
+external-object capabilities documented in
+`docs/architectures/phoenix-ffi.cirru`.
