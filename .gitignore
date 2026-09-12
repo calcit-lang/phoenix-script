@@ -11,3 +11,5 @@ dist/
 !.yarn/versions
 
 .compact-inc.cirru
+
+.DS_Store
