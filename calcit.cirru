@@ -3,8 +3,7 @@
   :about "|Machine-generated snapshot. Do not edit directly — changes will be overwritten. Use `calcit query` to inspect and `calcit edit`/`calcit tree` to modify. Run `calcit docs agents --contract` before mutations; use `--full` for first orientation or changed contract digest. Manual edits must follow format and schema conventions, then run `calcit edit format`."
   :package |app
   :entries $ {} $ :default
-    {} (:description |) (:init-fn 'app.main/main!) (:mode :js)
-      :reload-fn 'app.main/reload!
+    {} (:description |) (:init-fn 'app.main/main!) (:mode :js) (:reload-fn 'app.main/reload!)
       :feature-policy $ {}
       :modules $ [] |js-ffi/
       :type-slots $ {}
@@ -86,8 +85,7 @@
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ []
             :features $ #{} :js-ffi
-        'log! $ %{} 'CodeEntry
-          :doc "|Validate Phoenix.log and write one message."
+        'log! $ %{} 'CodeEntry (:doc "|Validate Phoenix.log and write one message.")
           :code $ quote $ defn log! (message)
             let
                 raw-phoenix $ contract/expect-object |Phoenix js/Phoenix
@@ -97,8 +95,7 @@
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ [] 'String
             :features $ #{} :js-ffi
-        'main! $ %{} 'CodeEntry
-          :doc "|Start the Phoenix key bindings."
+        'main! $ %{} 'CodeEntry (:doc "|Start the Phoenix key bindings.")
           :code $ quote $ defn main! () (bind-events!)
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
