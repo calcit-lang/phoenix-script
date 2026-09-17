@@ -1,15 +1,15 @@
 # Phoenix script in Calcit
 
 Scripts for [Phoenix](https://github.com/kasper/phoenix), built with Calcit
-0.13.77 and the JavaScript backend.
+0.15.3 and the JavaScript backend.
 
 ## Setup
 
-Install Phoenix, Calcit 0.13.77, Node.js 24, and Yarn 4. Then install both
+Install Phoenix, Calcit 0.15.3, Node.js 24, and Yarn 4. Then install both
 Calcit and JavaScript dependencies:
 
 ```bash
-caps --ci
+caps --strict --ci
 yarn install --immutable
 ```
 
@@ -21,6 +21,10 @@ yarn test
 
 The production bundle is written to `dist/phoenix.js`. Copy it to
 `~/.phoenix.js`, or run `yarn watch` to rebuild that file while editing.
+
+Before changing the Snapshot, read `calcit docs read upgrade` and preview the
+current stable syntax rules with
+`calcit fix --preset surface-latest-v2 --format edn`.
 
 ## Shortcuts
 

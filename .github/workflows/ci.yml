@@ -30,7 +30,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          caps --ci
+          caps --strict --ci
           yarn install --immutable
           caps verify --toolchain
 

@@ -54,15 +54,13 @@
           :schema $ :: 'Trait
         'bind-events! $ %{} 'CodeEntry
           :doc "|Validate the Phoenix Key API and register supported shortcuts."
-          :code $ quote $ defn bind-events! ()
-            do (log! |demo4)
-              let
-                  raw-key-api $ contract/expect-object |Key js/Key
-                  key-api $ unsafe-coerce raw-key-api 'app.main/KeyHost
-                do
-                  .!on key-api |tab (js-array |option) get-recent!
-                  .!on key-api |m (js-array |control |option) maximize-current!
-                  , &unit
+          :code $ quote $ defn bind-events! () (log! |demo4)
+            let
+                raw-key-api $ contract/expect-object |Key js/Key
+                key-api $ unsafe-coerce raw-key-api 'app.main/KeyHost
+              .!on key-api |tab (js-array |option) get-recent!
+              .!on key-api |m (js-array |control |option) maximize-current!
+              , &unit
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ []
@@ -79,7 +77,8 @@
                 let
                     raw-focused-window $ contract/expect-object |Window.recent[1] recent-window
                     focused-window $ unsafe-coerce raw-focused-window 'app.main/PhoenixWindowHost
-                  do (.!focus focused-window) &unit
+                  .!focus focused-window
+                  , &unit
                 , &unit
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
@@ -90,7 +89,8 @@
             let
                 raw-phoenix $ contract/expect-object |Phoenix js/Phoenix
                 phoenix $ unsafe-coerce raw-phoenix 'app.main/PhoenixHost
-              do (.!log phoenix message) &unit
+              .!log phoenix message
+              , &unit
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
             :args $ [] 'String
@@ -112,7 +112,8 @@
                 let
                     raw-current-window $ contract/expect-object |Window.recent[0] recent-window
                     current-window $ unsafe-coerce raw-current-window 'app.main/PhoenixWindowHost
-                  do (.!maximize current-window) &unit
+                  .!maximize current-window
+                  , &unit
                 , &unit
           :examples $ []
           :schema $ :: 'Fn $ {} (:return 'Unit)
