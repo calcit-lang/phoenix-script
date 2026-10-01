@@ -1,12 +1,16 @@
 # Phoenix script in Calcit
 
 Scripts for [Phoenix](https://github.com/kasper/phoenix), built with Calcit
-0.15.3 and the JavaScript backend.
+0.27.0 and the JavaScript backend.
 
 ## Setup
 
-Install Phoenix, Calcit 0.15.3, Node.js 24, and Yarn 4. Then install both
+Install Phoenix, Calcit 0.27.0, Node.js 24, and Yarn 4. Then install both
 Calcit and JavaScript dependencies:
+
+Use canonical `calcit.cirru` and `deps.cirru`; CI rejects retired
+`compact.cirru` and `package.cirru`. This local macOS configuration bundle has
+no web deployment or COS upload. CI checks host fixtures, not a live Phoenix session.
 
 ```bash
 caps --strict --ci
