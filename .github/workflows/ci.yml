@@ -13,7 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v6
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -27,6 +27,9 @@ jobs:
           corepack prepare yarn@4.18.0 --activate
 
       - uses: calcit-lang/setup-calcit@ca701be5a471759e442aa053cd100720bbe1f09f # v1.5.0
+        with:
+          tools: calcit,caps
+          caps-version: "0.1.1"
 
       - name: Install dependencies
         run: |
@@ -36,9 +39,16 @@ jobs:
 
       - name: Verify Snapshot and host behavior
         run: |
+          set -euo pipefail
+          test "$(calcit --version)" = "0.27.0"
+          test -f calcit.cirru
+          test -f deps.cirru
+          test ! -e compact.cirru
+          test ! -e package.cirru
           calcit calcit.cirru edit format
           git diff --exit-code -- calcit.cirru
           calcit calcit.cirru --check-only
+          calcit calcit.cirru analyze check-public --ns app.main --summary-only --format json
           calcit calcit.cirru analyze dynamic-methods
           calcit calcit.cirru analyze weak-types --only schema-dynamic,unresolved-type-slot,code-dynamic --intent unresolved --summary-only --format json
           calcit calcit.cirru analyze deprecated --summary-only --format json
