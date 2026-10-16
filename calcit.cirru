@@ -57,7 +57,7 @@
           :code $ quote $ defn bind-events! () (log! |demo4)
             let
                 raw-key-api $ contract/expect-object |Key js/Key
-                key-api $ unsafe-coerce raw-key-api 'app.main/KeyHost
+                key-api $ js-cast raw-key-api 'app.main/KeyHost
               .!on key-api |tab (js-array |option) get-recent!
               .!on key-api |m (js-array |control |option) maximize-current!
               , &unit
@@ -70,13 +70,13 @@
           :code $ quote $ defn get-recent! ()
             let
                 raw-window-api $ contract/expect-object |Window js/Window
-                window-api $ unsafe-coerce raw-window-api 'app.main/WindowHost
+                window-api $ js-cast raw-window-api 'app.main/WindowHost
                 windows $ contract/expect-object |Window.recent $ .!recent window-api
                 recent-window $ aget windows 1
               if (js-present? recent-window)
                 let
                     raw-focused-window $ contract/expect-object |Window.recent[1] recent-window
-                    focused-window $ unsafe-coerce raw-focused-window 'app.main/PhoenixWindowHost
+                    focused-window $ js-cast raw-focused-window 'app.main/PhoenixWindowHost
                   .!focus focused-window
                   , &unit
                 , &unit
@@ -88,7 +88,7 @@
           :code $ quote $ defn log! (message)
             let
                 raw-phoenix $ contract/expect-object |Phoenix js/Phoenix
-                phoenix $ unsafe-coerce raw-phoenix 'app.main/PhoenixHost
+                phoenix $ js-cast raw-phoenix 'app.main/PhoenixHost
               .!log phoenix message
               , &unit
           :examples $ []
@@ -105,13 +105,13 @@
           :code $ quote $ defn maximize-current! ()
             let
                 raw-window-api $ contract/expect-object |Window js/Window
-                window-api $ unsafe-coerce raw-window-api 'app.main/WindowHost
+                window-api $ js-cast raw-window-api 'app.main/WindowHost
                 windows $ contract/expect-object |Window.recent $ .!recent window-api
                 recent-window $ aget windows 0
               if (js-present? recent-window)
                 let
                     raw-current-window $ contract/expect-object |Window.recent[0] recent-window
-                    current-window $ unsafe-coerce raw-current-window 'app.main/PhoenixWindowHost
+                    current-window $ js-cast raw-current-window 'app.main/PhoenixWindowHost
                   .!maximize current-window
                   , &unit
                 , &unit
