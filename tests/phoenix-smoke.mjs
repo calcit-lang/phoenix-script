@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import { runInNewContext } from "node:vm";
 
 const logs = [];
 const registrations = [];
@@ -16,6 +18,8 @@ globalThis.Key = {
   },
 };
 globalThis.Window = { recent: () => windows };
+
+const bundleHost = { Phoenix: globalThis.Phoenix, Key: globalThis.Key, Window: globalThis.Window, console };
 
 const app = await import("../js-out/app.main.mjs");
 
@@ -48,5 +52,17 @@ assert.throws(() => app.bind_events_$x_(), /Key expected Object/);
 
 globalThis.Window = { recent: () => null };
 assert.throws(() => app.get_recent_$x_(), /Window\.recent expected Object/);
+
+// Replay the shipped, minified bundle with the same synthetic host, not a live Phoenix session.
+logs.length = registrations.length = focused.length = maximized.length = 0;
+runInNewContext(await readFile(new URL("../dist/phoenix.js", import.meta.url), "utf8"), bundleHost,
+  { filename: "phoenix.js", timeout: 5000 });
+for (const { callback } of registrations) callback();
+assert.deepEqual({ logs, keys: registrations.map(({ key, modifiers }) => ({ key, modifiers })), focused, maximized }, {
+  logs: ["demo4"],
+  keys: [{ key: "tab", modifiers: ["option"] }, { key: "m", modifiers: ["control", "option"] }],
+  focused: [1],
+  maximized: [0],
+});
 
 console.log("Phoenix host smoke test passed");
