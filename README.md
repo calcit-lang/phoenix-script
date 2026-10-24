@@ -4,11 +4,11 @@ Scripts for [Phoenix](https://github.com/kasper/phoenix), built with Calcit
 0.30.1 and the JavaScript backend.
 
 使用者影响：本轮源码配对正式 Calcit CLI/runtime **0.30.1**，
-并升级正式 JS-FFI `0.2.5`。请同步安装 CLI/runtime，再重新生成 bundle，不混用旧 alpha。
+并升级正式 JS-FFI `0.2.6`。请同步安装 CLI/runtime，再重新生成 bundle，不混用旧 alpha。
 快捷键、窗口顺序和 bundle 用法不变；此前迁移的 `js-cast` 继续
 在真正宿主边界检查 log/on/recent/focus/maximize 能力，非法宿主对象会提前拒绝。
-本次不改 Snapshot、公开签名、trait 或架构说明；原宿主 fixture 增加一次交付的
-压缩 bundle 回放，原断言全部保留，不新增包装、强转、测试脚本或框架。
+本次不改 Snapshot、公开签名、trait、架构说明或宿主 fixture；保留原模块及
+压缩 bundle 回放断言，不新增包装、强转、测试脚本或框架。
 本轮只在仓库内构建 `dist/phoenix.js` 并验证隔离宿主 fixture，不自动安装到
 `~/.phoenix.js`，也不代表已验收用户机器上的真实 Phoenix 会话。此本机配置包没有网页或 COS 部署。
 
@@ -48,9 +48,14 @@ JavaScript realm 中执行实际 `dist/phoenix.js` 并调用合成回调，核�
 The production bundle is written to `dist/phoenix.js`. Copy it to
 `~/.phoenix.js`, or run `yarn watch` to rebuild that file while editing.
 
-Before changing the Snapshot, read `calcit docs read upgrade` and preview the
-current stable syntax rules with
-`calcit fix --preset surface-latest-v2 --format edn`.
+Before changing the Snapshot, read `calcit docs agents --contract` and inspect
+the affected definitions with `calcit query context` / `calcit query def`.
+The audited source no longer needs the historical `surface-latest-v2` preset.
+Use diagnostics to identify the actual contract, then apply a targeted change
+through the official structured editor; do not add a compiler rewrite rule for
+each application-specific fix. CI remains the quality gate: full strict checks,
+zero weak-type debt, and the original host/module/bundle fixture must pass.
+Static checks and synthetic fixtures do not prove a live Phoenix session.
 
 ## Shortcuts
 
