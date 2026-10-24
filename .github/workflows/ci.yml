@@ -43,11 +43,9 @@ jobs:
         run: |
           set -euo pipefail
           calcit calcit.cirru edit format
-          git diff --exit-code -- calcit.cirru
+          git diff --exit-code --quiet -- calcit.cirru
           calcit calcit.cirru --check-only --all-defs
-          report="$(calcit calcit.cirru fix --workflow strict --verify --format json)"
-          printf '%s\n' "$report"
-          jq -e '.data.workflow.status? == "passed" and .diagnostics? == []' <<< "$report"
+          calcit calcit.cirru fix --workflow strict --verify --format json | jq -e 'if .data.workflow.status? == "passed" and .diagnostics? == [] then true else ., false end'
           calcit calcit.cirru analyze weak-types --summary-only --format json | jq -e '.data.summary.hits == 0'
           calcit calcit.cirru analyze weak-types --only coverage --coverage-level none,partial --summary-only --format json | jq -e '.data.summary.definitions == 0'
           calcit calcit.cirru analyze weak-types --only deprecated-call --summary-only --format json | jq -e '.data.summary.calls == 0'
