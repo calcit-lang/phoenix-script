@@ -1,10 +1,10 @@
 # Phoenix script in Calcit
 
 Scripts for [Phoenix](https://github.com/kasper/phoenix), built with Calcit
-0.30.1 and the JavaScript backend.
+0.31.0 and the JavaScript backend.
 
-使用者影响：本轮源码配对正式 Calcit CLI/runtime **0.30.1**，
-并升级正式 JS-FFI `0.2.6`。请同步安装 CLI/runtime，再重新生成 bundle，不混用旧 alpha。
+使用者影响：本轮源码配对正式 Calcit CLI/runtime **0.31.0**，
+并升级正式 JS-FFI `0.2.7`。请同步安装 CLI/runtime，再重新生成 bundle，不混用旧 alpha。
 快捷键、窗口顺序和 bundle 用法不变；此前迁移的 `js-cast` 继续
 在真正宿主边界检查 log/on/recent/focus/maximize 能力，非法宿主对象会提前拒绝。
 本次不改 Snapshot、公开签名、trait、架构说明或宿主 fixture；保留原模块及
@@ -14,7 +14,7 @@ Scripts for [Phoenix](https://github.com/kasper/phoenix), built with Calcit
 
 ## Setup
 
-Install Phoenix, Calcit 0.30.1, Node.js 24, and Yarn 4. Then install both
+Install Phoenix, Calcit 0.31.0, Node.js 24, and Yarn 4. Then install both
 Calcit and JavaScript dependencies:
 
 Use canonical `calcit.cirru` and `deps.cirru`; CI rejects retired
