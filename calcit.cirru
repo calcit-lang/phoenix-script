@@ -13,45 +13,34 @@
         'KeyHost $ %{} 'CodeEntry
           :doc "|Typed capability for Phoenix shortcut registration."
           :code $ quote $ deftrait KeyHost
-            .on $ :: 'Fn $ {}
-              :args $ [] 'app.main/KeyHost 'String 'JsObject $ :: 'Fn
-                {}
-                  :args $ []
-                  :return 'Unit
-              :return 'Unit
+            .on $ quote $ Fn app.main/KeyHost String JsObject
+              Fn $ -> Unit
+              -> Unit
           :examples $ []
           :ffi $ {} (:backend :js) (:kind :external-object)
-          :schema $ :: 'Trait
+          :schema $ quote Trait
         'PhoenixHost $ %{} 'CodeEntry
           :doc "|Typed capability for the Phoenix logging global."
           :code $ quote $ deftrait PhoenixHost
-            .log $ :: 'Fn $ {}
-              :args $ [] 'app.main/PhoenixHost 'String
-              :return 'Unit
+            .log $ quote $ Fn app.main/PhoenixHost String (-> Unit)
           :examples $ []
           :ffi $ {} (:backend :js) (:kind :external-object)
-          :schema $ :: 'Trait
+          :schema $ quote Trait
         'PhoenixWindowHost $ %{} 'CodeEntry
           :doc "|Typed capability for Phoenix window focus and maximize effects."
           :code $ quote $ deftrait PhoenixWindowHost
-            .focus $ :: 'Fn $ {}
-              :args $ [] 'app.main/PhoenixWindowHost
-              :return 'Unit
-            .maximize $ :: 'Fn $ {}
-              :args $ [] 'app.main/PhoenixWindowHost
-              :return 'Unit
+            .focus $ quote $ Fn app.main/PhoenixWindowHost (-> Unit)
+            .maximize $ quote $ Fn app.main/PhoenixWindowHost (-> Unit)
           :examples $ []
           :ffi $ {} (:backend :js) (:kind :external-object)
-          :schema $ :: 'Trait
+          :schema $ quote Trait
         'WindowHost $ %{} 'CodeEntry
           :doc "|Typed capability for reading the Phoenix recent-window list."
           :code $ quote $ deftrait WindowHost
-            .recent $ :: 'Fn $ {}
-              :args $ [] 'app.main/WindowHost
-              :return 'JsObject
+            .recent $ quote $ Fn app.main/WindowHost (-> JsObject)
           :examples $ []
           :ffi $ {} (:backend :js) (:kind :external-object)
-          :schema $ :: 'Trait
+          :schema $ quote Trait
         'bind-events! $ %{} 'CodeEntry
           :doc "|Validate the Phoenix Key API and register supported shortcuts."
           :code $ quote $ defn bind-events! () (log! |demo4)
@@ -62,9 +51,7 @@
               .!on key-api |m (js-array |control |option) maximize-current!
               , &unit
           :examples $ []
-          :schema $ :: 'Fn $ {} (:return 'Unit)
-            :args $ []
-            :features $ #{} :js-ffi
+          :schema $ quote $ Fn (-> Unit) (:features :js-ffi)
         'get-recent! $ %{} 'CodeEntry
           :doc "|Focus the second recent Phoenix window when present."
           :code $ quote $ defn get-recent! ()
@@ -81,9 +68,7 @@
                   , &unit
                 , &unit
           :examples $ []
-          :schema $ :: 'Fn $ {} (:return 'Unit)
-            :args $ []
-            :features $ #{} :js-ffi
+          :schema $ quote $ Fn (-> Unit) (:features :js-ffi)
         'log! $ %{} 'CodeEntry (:doc "|Validate Phoenix.log and write one message.")
           :code $ quote $ defn log! (message)
             let
@@ -92,14 +77,11 @@
               .!log phoenix message
               , &unit
           :examples $ []
-          :schema $ :: 'Fn $ {} (:return 'Unit)
-            :args $ [] 'String
-            :features $ #{} :js-ffi
+          :schema $ quote $ Fn String (-> Unit) (:features :js-ffi)
         'main! $ %{} 'CodeEntry (:doc "|Start the Phoenix key bindings.")
           :code $ quote $ defn main! () (bind-events!)
           :examples $ []
-          :schema $ :: 'Fn $ {} (:return 'Unit)
-            :args $ []
+          :schema $ quote $ Fn (-> Unit)
         'maximize-current! $ %{} 'CodeEntry
           :doc "|Maximize the first recent Phoenix window when present."
           :code $ quote $ defn maximize-current! ()
@@ -116,15 +98,12 @@
                   , &unit
                 , &unit
           :examples $ []
-          :schema $ :: 'Fn $ {} (:return 'Unit)
-            :args $ []
-            :features $ #{} :js-ffi
+          :schema $ quote $ Fn (-> Unit) (:features :js-ffi)
         'reload! $ %{} 'CodeEntry
           :doc "|Re-register the Phoenix key bindings after reload."
           :code $ quote $ defn reload! () (bind-events!)
           :examples $ []
-          :schema $ :: 'Fn $ {} (:return 'Unit)
-            :args $ []
+          :schema $ quote $ Fn (-> Unit)
       :ns $ %{} 'NsEntry (:doc |)
         :code $ quote $ ns app.main
           :require $ js-ffi.contract :as contract

@@ -1,7 +1,7 @@
 {}
   :schema-version 1
   :feature 'phoenix-ffi
-  :doc "|Describe the typed Phoenix JavaScript boundary and the startup registrations."
+  :doc "|Historical fully implemented architecture proposal; not a current migration scaffold. Query app.main definitions for current contracts."
   :roots $ #{} 'app.main/main! 'app.main/reload!
   :definitions $ {}
     'app.main/main! $ {}
