@@ -1,21 +1,21 @@
 # Phoenix script in Calcit
 
 Scripts for [Phoenix](https://github.com/kasper/phoenix), built with Calcit
-0.32.0 and the JavaScript backend.
+0.32.1 and the JavaScript backend.
 
-使用者影响：本轮源码配对正式 Calcit CLI/runtime **0.32.0**，
-并升级正式 JS-FFI `0.2.8`。请同步安装 CLI/runtime，再重新生成 bundle，不混用旧 alpha。
+使用者影响：本轮源码配对正式 Calcit CLI/runtime **0.32.1**，
+并升级正式 JS-FFI `0.2.9`。请同步安装 CLI/runtime，再重新生成 bundle，不混用旧 alpha。
 快捷键、窗口顺序和 bundle 用法不变；此前迁移的 `js-cast` 继续
 在真正宿主边界检查 log/on/recent/focus/maximize 能力，非法宿主对象会提前拒绝。
-本次通过官方 formatter 更新 Snapshot 类型语法，公开签名与 trait 合同不变；
+此前已由官方 formatter 更新类型语法，本次 Snapshot 字节、公开签名与 trait 合同不变；
 保留宿主 fixture、原模块及
-压缩 bundle 回放断言，不新增包装、强转、测试脚本或框架。
+压缩 bundle 回放断言，不新增包装、强转、测试脚本或框架。新解析出的 npm 版本须已发布至少 60 分钟，无单包豁免；已有 immutable 锁版本不重新计算年龄。
 本轮只在仓库内构建 `dist/phoenix.js` 并验证隔离宿主 fixture，不自动安装到
 `~/.phoenix.js`，也不代表已验收用户机器上的真实 Phoenix 会话。此本机配置包没有网页或 COS 部署。
 
 ## Setup
 
-Install Phoenix, Calcit 0.32.0, Node.js 24, and Yarn 4. Then install both
+Install Phoenix, Calcit 0.32.1, Node.js 24, and Yarn 4. Then install both
 Calcit and JavaScript dependencies:
 
 Use canonical `calcit.cirru` and `deps.cirru`; CI rejects retired
@@ -70,4 +70,4 @@ external-object capabilities. Inspect the current contracts with
 
 `docs/architectures/phoenix-ffi.cirru` is a historical, fully implemented architecture
 proposal, not a current migration scaffold. Its old type notation is retained as
-history; use the current Snapshot queries for 0.32.0 contracts.
+history; use the current Snapshot queries for 0.32.1 contracts.
