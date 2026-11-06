@@ -13,7 +13,7 @@
         'KeyHost $ %{} 'CodeEntry
           :doc "|Typed capability for Phoenix shortcut registration."
           :code $ quote $ deftrait KeyHost
-            .on $ quote $ Fn app.main/KeyHost String JsObject
+            .on $ Fn app.main/KeyHost String JsObject
               Fn $ -> Unit
               -> Unit
           :examples $ []
@@ -22,22 +22,22 @@
         'PhoenixHost $ %{} 'CodeEntry
           :doc "|Typed capability for the Phoenix logging global."
           :code $ quote $ deftrait PhoenixHost
-            .log $ quote $ Fn app.main/PhoenixHost String (-> Unit)
+            .log $ Fn app.main/PhoenixHost String $ -> Unit
           :examples $ []
           :ffi $ {} (:backend :js) (:kind :external-object)
           :schema $ quote Trait
         'PhoenixWindowHost $ %{} 'CodeEntry
           :doc "|Typed capability for Phoenix window focus and maximize effects."
           :code $ quote $ deftrait PhoenixWindowHost
-            .focus $ quote $ Fn app.main/PhoenixWindowHost (-> Unit)
-            .maximize $ quote $ Fn app.main/PhoenixWindowHost (-> Unit)
+            .focus $ Fn app.main/PhoenixWindowHost $ -> Unit
+            .maximize $ Fn app.main/PhoenixWindowHost $ -> Unit
           :examples $ []
           :ffi $ {} (:backend :js) (:kind :external-object)
           :schema $ quote Trait
         'WindowHost $ %{} 'CodeEntry
           :doc "|Typed capability for reading the Phoenix recent-window list."
           :code $ quote $ deftrait WindowHost
-            .recent $ quote $ Fn app.main/WindowHost (-> JsObject)
+            .recent $ Fn app.main/WindowHost $ -> JsObject
           :examples $ []
           :ffi $ {} (:backend :js) (:kind :external-object)
           :schema $ quote Trait
